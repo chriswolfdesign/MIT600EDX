@@ -1,5 +1,6 @@
 def iterPower(base, exp):
     """
+    Input:
     base: int or float
     exp: int >= 0
 
