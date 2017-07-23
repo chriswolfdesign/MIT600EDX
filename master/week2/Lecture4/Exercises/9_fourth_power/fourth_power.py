@@ -16,7 +16,7 @@ def fourthPower(x):
     """
     Input:
     x: int or float.
-    Returns: x ^ 4
+    return: x ^ 4
     """
     return square(x) * square(x)
 
