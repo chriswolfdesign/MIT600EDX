@@ -75,9 +75,39 @@ def test_get_guessed_word():
     else:
         fail(function_call, expected_result, received_result)
 
-def test_get_avaible_letters():
+def test_get_available_letters():
     print(purple("-----------------------------------------------------------"))
+    print(purple("test_get_available_letters"))
+    print(purple("-----------------------------------------------------------"))
+
+    function_call = ("getAvailableLetters(['a'])")
+    expected_result = "bcdefghijklmnopqrstuvwxyz"
+    received_result = getAvailableLetters(['a'])
+
+    if expected_result == received_result:
+        success(function_call)
+    else:
+        fail(function_call, expected_result, received_result)
+
+    function_call = ("getAvailableLetters(['a', 'b', 'd'])")
+    expected_result = "cefghijklmnopqrstuvwxyz"
+    received_result = getAvailableLetters(['a', 'b', 'd'])
+
+    if expected_result == received_result:
+        success(function_call)
+    else:
+        fail(function_call, expected_result, received_result)
+
+    function_call = "getAvailableLetters(['e', 'i', 'k', 'p', 'r', 's'])"
+    expected_result = "abcdfghjlmnoqtuvwxyz"
+    received_result = getAvailableLetters(['e', 'i', 'k', 'p', 'r', 's'])
+
+    if expected_result == received_result:
+        success(function_call)
+    else:
+        fail(function_call, expected_result, received_result)
 
 if __name__ == "__main__":
     test_is_word_guessed()
     test_get_guessed_word()
+    test_get_available_letters()
