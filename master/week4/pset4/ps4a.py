@@ -266,8 +266,10 @@ def playHand(hand, wordList, n):
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
     if calculateHandlen(hand) == 0:
         print("Run out of letters.  Total score: {} points".format(total))
+        print()
     else:
         print("Goodbye!  Total score: {} points.".format(total))
+        print()
 
 #
 # Problem #5: Playing a game
@@ -285,11 +287,33 @@ def playGame(wordList):
 
     2) When done playing the hand, repeat from step 1
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this line when you code the function
+    # Default hand value to allow for "r" reaction to work correctly
+    hand = None
 
+    # Game only ends at a break in "e" command
+    while(True):
+        command = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
 
+        if command == "n":
+            hand = dealHand(HAND_SIZE)
+            new_hand = hand.copy()
+            playHand(new_hand, wordList, HAND_SIZE)
 
+        elif command == "r":
+
+            # If there is no hand to repeat
+            if hand == None:
+                print("You have not played yet.  Please play a new hand first!")
+                print()
+            else:
+                new_hand = hand.copy()
+                playHand(new_hand, wordList, HAND_SIZE)
+
+        elif command == "e":
+            break
+
+        else:
+            print("Invalid command.")
 
 #
 # Build data structures used for entire session and play game
