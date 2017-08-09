@@ -1,7 +1,6 @@
 from ps4a import *
 import time
 
-
 #
 #
 # Computer chooses a word
@@ -170,8 +169,6 @@ def playGame(wordList):
             else:
                 print("Invalid command.")
                 print()
-
-
 
 #
 # Build data structures used for entire session and play game
