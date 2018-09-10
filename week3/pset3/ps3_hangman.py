@@ -99,7 +99,7 @@ def hangman(secretWord):
     * At the start of the game, let the user know how many
       letters the secretWord contains.
 
-    * Ask the user to supply one guess (i.e. letter) per round.
+    * Ask the user to supply one guess (i.e. letter) per round.®
 
     * The user should receive feedback immediately after each guess
       about whether their guess appears in the computers word.
@@ -163,5 +163,6 @@ def hangman(secretWord):
 # and run this file to test! (hint: you might want to pick your own
 # secretWord while you're testing)
 
-secretWord = chooseWord(wordlist).lower()
-hangman(secretWord)
+if __name__ == "__main__":
+    secretWord = chooseWord(wordlist).lower()
+    hangman(secretWord)
